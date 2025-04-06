@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model FarmerSession {
+  id                   Int      @id @default(autoincrement())
+  suggested_crop       String
+  fertilizer_kg        Float
+  pesticide_kg         Float
+  estimated_yield_ton  Float
+  sustainability_score Float
+  ai_message           String
+  soil_pH              Float
+  soil_moisture        Float
+  temperature          Float
+  rainfall             Float
+  createdAt            DateTime @default(now())
+}
